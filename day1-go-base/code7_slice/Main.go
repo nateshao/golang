@@ -69,3 +69,8 @@ func main() {
 	fmt.Printf("局部变量： slice8 %v\n", slice8)
 	fmt.Printf("局部变量： slice9 %v\n", slice9)
 }
+
+//通过make来创建切片
+//var slice []type = make([]type, len)
+//slice  := make([]type, len)
+//slice  := make([]type, len, cap)
