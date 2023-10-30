@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /**
 指针地址、指针类型和指针取值。
 */
@@ -88,5 +90,29 @@ package main
 
 // map基本使用
 
+//func main() {
+//	scoreMap := make(map[string]int, 8)
+//	scoreMap["千羽"] = 90
+//	scoreMap["燕燕"] = 90
+//	fmt.Println(scoreMap)
+//	fmt.Println(scoreMap["小明"])
+//	fmt.Printf("type of a:%T\n",scoreMap)
+//
+//}
+
+/**
+map也支持在声明的时候填充元素，例如：
+*/
+
 func main() {
+	userInfo := map[string]string{
+		"username": "nateshao.gitlab.io",
+		"password": "123456",
+	}
+	fmt.Println(userInfo)
 }
+
+//判断某个键是否存在
+//Go语言中有个判断map中键是否存在的特殊写法，格式如下:
+//
+//value, ok := map[key]
