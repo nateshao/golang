@@ -1,4 +1,4 @@
-package day4_method
+package main
 
 type Test struct{}
 
