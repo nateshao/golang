@@ -29,4 +29,10 @@ func (self *User) Test() {
 func main() {
 	user := User{1, "程序员千羽"}
 	user.Test()
+
+	mValue := user.Test
+	mValue() // 隐式传递 receiver
+
+	mExpression := (*User).Test
+	mExpression(&user) // 显式传递 receiver
 }
