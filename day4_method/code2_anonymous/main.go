@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+/**
+1. 匿名字段
+Golang匿名字段 ：可以像字段成员那样访问匿名字段方法，编译器负责查找。
+*/
+
 //type User struct {
 //	id   int
 //	name string
@@ -22,8 +27,6 @@ import "fmt"
 //}
 
 //
-
-
 
 type User struct {
 	id   int
@@ -48,5 +51,5 @@ func main() {
 
 	fmt.Println(m.ToString())
 
-	fmt.Println(m.User.ToString())
+	fmt.Println(m.User.ToString(), 321)
 }
