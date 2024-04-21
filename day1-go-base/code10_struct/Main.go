@@ -14,19 +14,19 @@ type person struct {
 func main() {
 	var p1 person
 
-	p1.name = "nateshao.gitlab.cn"
+	p1.name = "nateshao.gitlab.io"
 	p1.age = 20
 	p1.city = "深圳"
 	fmt.Println(p1)            // {nateshao.gitlab.cn 深圳 20}
-	fmt.Printf("p1=%v\n", p1)  // p1={公众号：千羽的编程时光 北京 18}
-	fmt.Printf("p1=%#v\n", p1) // p1=main.person{name:"公众号：千羽的编程时光", city:"北京", age:18}
+	fmt.Printf("p1=%v\n", p1)  // p1={公众号：程序员千羽 北京 18}
+	fmt.Printf("p1=%#v\n", p1) // p1=main.person{name:"公众号：程序员千羽", city:"北京", age:18}
 	fmt.Println("------------------------- 匿名结构体 ------------------------------")
 
 	var user struct {
 		Name string
 		Age  int
 	}
-	user.Name = "公众号：千羽的编程时光"
+	user.Name = "公众号：程序员千羽"
 	user.Age = 18
 	fmt.Printf("%#v\n", user)
 	// 创建指针类型结构体
@@ -59,19 +59,19 @@ func main() {
 
 	fmt.Println("------------------------- 使用键值对初始化 ------------------------------")
 	p5 := person{
-		name: "公众号：千羽的编程时光",
+		name: "公众号：程序员千羽",
 		city: "北京",
 		age:  18,
 	}
-	fmt.Printf("p5=%#v\n", p5) //p5=main.person{name:"公众号：千羽的编程时光", city:"北京", age:18}
+	fmt.Printf("p5=%#v\n", p5) //p5=main.person{name:"公众号：程序员千羽", city:"北京", age:18}
 
 	fmt.Println("------------------------- 使用值的列表初始化 ------------------------------")
 	p8 := &person{
-		"公众号：千羽的编程时光",
+		"公众号：程序员千羽",
 		"北京",
 		18,
 	}
-	fmt.Printf("p8=%#v\n", p8) //p8=&main.person{name:"公众号：千羽的编程时光", city:"北京", age:18}
+	fmt.Printf("p8=%#v\n", p8) //p8=&main.person{name:"公众号：程序员千羽", city:"北京", age:18}
 
 	fmt.Println("------------------------- 结构体内存布局 ------------------------------")
 
@@ -90,7 +90,7 @@ func main() {
 	fmt.Printf("n.d %p\n", &n.d)
 
 	fmt.Println("------------------------- 构造函数 ------------------------------")
-	p9 := newPerson("公众号：千羽的编程时光", "测试", 90)
+	p9 := newPerson("公众号：程序员千羽", "测试", 90)
 	fmt.Printf("%#v\n", p9)
 
 	fmt.Println("------------------------- 结构体与JSON序列化 ------------------------------")
@@ -124,14 +124,14 @@ func main() {
 	fmt.Printf("%#v\n", c1)
 }
 
-//Student 学生
+// Student 学生
 type Student struct {
 	ID     int
 	Gender string
 	Name   string
 }
 
-//Class 班级
+// Class 班级
 type Class struct {
 	Title    string
 	Students []*Student
@@ -145,13 +145,13 @@ func newPerson(name, city string, age int8) *person {
 	}
 }
 
-//Person 结构体
+// Person 结构体
 type Person struct {
 	name string
 	age  int8
 }
 
-//Dream Person做梦的方法
+// Dream Person做梦的方法
 func (p Person) Dream() {
 	fmt.Printf("%s的梦想是学好Go语言！\n", p.name)
 }

@@ -26,10 +26,10 @@ import "fmt"
 //	fmt.Println(userInfo)
 //}
 
-//判断某个键是否存在
-//Go语言中有个判断map中键是否存在的特殊写法，格式如下:
+// 判断某个键是否存在
+// Go语言中有个判断map中键是否存在的特殊写法，格式如下:
 //
-//value, ok := map[key]
+// value, ok := map[key]
 func main() {
 	scoreMap := make(map[string]int)
 	scoreMap["千羽"] = 90
