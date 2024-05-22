@@ -11,7 +11,7 @@ type Params struct {
 	Width, Height int
 }
 
-// 主函数
+// 主函数 https://www.topgoer.com/%E5%BE%AE%E6%9C%8D%E5%8A%A1/RPC.html
 func main() {
 	// 1.连接远程rpc服务
 	conn, err := rpc.DialHTTP("tcp", ":8000")
