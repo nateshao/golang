@@ -1,6 +1,8 @@
 module grpc_study
 
-go 1.18
+go 1.21
+
+toolchain go1.21.1
 
 require (
 	google.golang.org/grpc v1.64.0
