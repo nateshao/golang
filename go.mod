@@ -12,6 +12,7 @@ require (
 	github.com/julienschmidt/httprouter v1.3.0 // indirect
 	github.com/vmihailenco/msgpack v3.3.3+incompatible // indirect
 	go.etcd.io/etcd v2.3.8+incompatible // indirect
+	golang.org/x/crypto v0.24.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/protobuf v1.34.2 // indirect
 )
