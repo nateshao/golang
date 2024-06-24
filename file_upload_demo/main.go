@@ -13,13 +13,17 @@ const (
 	MAX_UPLOAD_SIZE = 1024 * 1024 * 20 //50MB
 )
 
+/*
+*
+文件上传
+*/
 func main() {
 	r := RegisterHandlers()
 
 	http.ListenAndServe(":8080", r)
 }
 
-//RegisterHandlers ...
+// RegisterHandlers ...
 func RegisterHandlers() *httprouter.Router {
 	router := httprouter.New()
 
