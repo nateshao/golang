@@ -14,5 +14,12 @@ require (
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/jasonlvhit/gocron v0.0.1 // indirect
+	github.com/satori/go.uuid v1.2.0 // indirect
+	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
+	github.com/smartwalle/alipay/v3 v3.2.21 // indirect
+	github.com/smartwalle/ncrypto v1.0.4 // indirect
+	github.com/smartwalle/ngx v1.0.9 // indirect
+	github.com/smartwalle/nsign v1.0.9 // indirect
 	google.golang.org/protobuf v1.34.2 // indirect
 )
