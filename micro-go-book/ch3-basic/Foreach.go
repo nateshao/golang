@@ -14,7 +14,7 @@ func main() {
 		fmt.Println(k, v, " ")
 	}
 
-	fmt.Println()
+	fmt.Println("------  ------")
 
 	// 切片的遍历
 	slis := []int{1, 2, 3, 4, 5, 6, 7, 8}

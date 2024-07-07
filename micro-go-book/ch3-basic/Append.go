@@ -18,8 +18,8 @@ func main() {
 	fmt.Printf("source arr1 become %v\n", arr1)
 
 	newSli2 := append(sli2, 5)
-	fmt.Printf("newSli2 pointer is %p, len is %v, cap is %v, value is %v\n", &newSli2, len(newSli2), cap(newSli2), newSli2)
-	fmt.Printf("source arr2 become %v\n", arr2)
+	fmt.Printf("newSli222222222 pointer is %p, len is %v, cap is %v, value is %v\n", &newSli2, len(newSli2), cap(newSli2), newSli2)
+	fmt.Printf("source arr2222222 become %v\n", arr2)
 
 	arr3 := [...]int{1, 2, 3, 4}
 	sli3 := arr3[0:2:2] // 长度为2，容量为2
