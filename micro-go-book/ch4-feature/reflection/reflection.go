@@ -46,10 +46,10 @@ func main() {
 
 	fmt.Printf("*Hero's type is %s, kind is %s", reflect.TypeOf(&Hero{}), reflect.TypeOf(&Hero{}).Kind())
 
-	//typeOfPtrHero := reflect.TypeOf(&Hero{})
-	//fmt.Printf("*Hero's type is %s, kind is %s\n",typeOfPtrHero, typeOfPtrHero.Kind())
-	//typeOfHero := typeOfPtrHero.Elem()
-	//fmt.Printf(" typeOfPtrHero elem to typeOfHero, Hero's type is %s, kind is %s", typeOfHero, typeOfHero.Kind())
+	typeOfPtrHero := reflect.TypeOf(&Hero{})
+	fmt.Printf("*Hero's type is %s, kind is %s\n", typeOfPtrHero, typeOfPtrHero.Kind())
+	typeOfHero := typeOfPtrHero.Elem()
+	fmt.Printf(" typeOfPtrHero elem to typeOfHero, Hero's type is %s, kind is %s", typeOfHero, typeOfHero.Kind())
 
 	//typeOfHero := reflect.TypeOf(Hero{})
 	//

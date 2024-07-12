@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"micro-go-book/ch4-feature/compute"
-	//"github.com/longjoy/micro-go-book/ch4-feature/compute"
 )
 
 func main() {
