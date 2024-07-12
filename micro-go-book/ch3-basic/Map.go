@@ -21,5 +21,8 @@ func main() {
 	}
 
 	fmt.Printf("id %v is %v\n", 3, classMates2[3])
-
+	fmt.Println("------------  -------------- ")
+	for key, value := range classMates2 {
+		fmt.Printf("key %v is %v\n", key, value)
+	}
 }
