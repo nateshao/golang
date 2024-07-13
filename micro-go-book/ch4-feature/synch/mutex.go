@@ -6,9 +6,8 @@ import (
 	"time"
 )
 
-
-func main()  {
-	var lock sync.Mutex
+func main() {
+	var lock sync.Mutex // 互斥锁
 	go func() {
 		// 加锁
 		lock.Lock()
