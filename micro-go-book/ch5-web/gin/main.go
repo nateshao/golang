@@ -13,10 +13,10 @@ func getApi(c *gin.Context) {
 
 func postApi(c *gin.Context) {
 	fmt.Println(c.PostForm("id"))
-	c.String(http.StatusOK, "ok")
+	c.String(http.StatusOK, "很棒，postApi请求成功ok")
 }
 
-func postjson(c *gin.Context) {
+func postJson(c *gin.Context) {
 	var data = &struct {
 		Name string `json:"title"`
 	}{}
@@ -24,11 +24,11 @@ func postjson(c *gin.Context) {
 	c.BindJSON(data)
 
 	fmt.Println(data)
-	c.String(http.StatusOK, "ok")
+	c.String(http.StatusOK, "很棒，postJson请求成功ok")
 
 }
 
-//全局中间件 允许跨域
+// 全局中间件 允许跨域
 func GlobalMiddleware(c *gin.Context) {
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Headers", "Content-Type,AccessToken,X-CSRF-Token, Authorization, Token")
@@ -37,26 +37,27 @@ func GlobalMiddleware(c *gin.Context) {
 	c.Header("Access-Control-Allow-Credentials", "true")
 	c.Next()
 }
-func AuthMiddleWare() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		token := c.Request.Header.Get("Authorization")
-		authorized := check(token) //调用认证方法
-		if authorized {
-			c.Next()
-			return
-		}
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"error": "Unauthorized",
-		})
-		c.Abort()
-		return
-	}
-}
+
+//func AuthMiddleWare() gin.HandlerFunc {
+//	return func(c *gin.Context) {
+//		token := c.Request.Header.Get("Authorization")
+//		//authorized := check(token) //调用认证方法
+//		//if authorized {
+//		//	c.Next()
+//		//	return
+//		//}
+//		c.JSON(http.StatusUnauthorized, gin.H{
+//			"error": "Unauthorized",
+//		})
+//		c.Abort()
+//		return
+//	}
+//}
 
 func main() {
 	r := gin.Default()
 
-	r.GET("/home", AuthMiddleWare(), func(c *gin.Context) {
+	r.GET("/home", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"data": "home"})
 	})
 	r.GET("/", func(c *gin.Context) {
@@ -79,7 +80,7 @@ func main() {
 	})
 	r.GET("/getApi", getApi)      //注册接口
 	r.POST("/postApi", postApi)   //注册接口
-	r.POST("/postjson", postjson) //注册接口
+	r.POST("/postjson", postJson) //注册接口
 	//r.Use(GlobalMiddleware)
 	_ = r.Run(":8000")
 }
