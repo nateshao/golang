@@ -16,5 +16,4 @@ message StringRequest {
 
 message StringResponse {
     string Ret = 1;
-    string err = 2;
-}
+    string err = 2;}
