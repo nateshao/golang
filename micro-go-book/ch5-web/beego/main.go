@@ -14,7 +14,7 @@ type User struct {
 
 func init() {
 	// set default database
-	orm.RegisterDataBase("default", "mysql", "root:123456@tcp(127.0.0.1:3306)/user_tmp?charset=utf8", 30)
+	orm.RegisterDataBase("default", "mysql", "root:123456@tcp(127.0.0.1:3306)/demo?charset=utf8", 30)
 
 	// register model
 	orm.RegisterModel(new(User))
@@ -33,7 +33,7 @@ func main() {
 	fmt.Printf("ID: %d, ERR: %v\n", id, err)
 
 	// update
-	user.Name = "boho"
+	user.Name = "nateshao"
 	num, err := o.Update(&user)
 	fmt.Printf("NUM: %d, ERR: %v\n", num, err)
 
@@ -50,6 +50,6 @@ func main() {
 		fmt.Println(term["user_id"], ":", term["name"])
 	}
 	// delete
-	num, err = o.Delete(&u)
-	fmt.Printf("NUM: %d, ERR: %v\n", num, err)
+	//num, err = o.Delete(&u)
+	//fmt.Printf("NUM: %d, ERR: %v\n", num, err)
 }

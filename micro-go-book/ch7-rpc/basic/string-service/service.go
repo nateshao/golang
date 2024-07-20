@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// Service constants
+// StrMaxSize Service constants
 const (
 	StrMaxSize = 1024
 )
@@ -26,11 +26,11 @@ type Service interface {
 	// Concat a and b
 	Concat(req StringRequest, ret *string) error
 
-	// a,b pkg string value
+	// Diff a,b pkg string value
 	Diff(req StringRequest, ret *string) error
 }
 
-//ArithmeticService implement Service interface
+// StringService ArithmeticService implement Service interface
 type StringService struct {
 }
 
