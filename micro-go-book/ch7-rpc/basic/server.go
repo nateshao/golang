@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	stringService := new(service.StringService)
-	registerError := rpc.Register(stringService)
+	//stringService := new(service.StringService)
+	registerError := rpc.Register(service.StringService{})
 	if registerError != nil {
 		log.Fatal("Register error: ", registerError)
 	}
