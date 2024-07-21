@@ -61,7 +61,10 @@ func handleRefreshEvent(body []byte, consumerTag string) {
 		log.Println(consumerTag, updateToken.DestinationService)
 		if strings.Contains(updateToken.DestinationService, consumerTag) {
 			log.Println("Reloading Viper config from Spring Cloud Config server")
-			loadRemoteConfig()
+			err := loadRemoteConfig()
+			if err != nil {
+				return
+			}
 			log.Println(viper.GetString("resume.name"))
 		}
 	}
