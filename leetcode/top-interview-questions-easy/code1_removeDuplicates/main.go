@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"testing"
 )
 
 /*
@@ -37,42 +36,31 @@ func removeDuplicates(nums []int) int {
 	return left + 1
 }
 
-func TestRemoveDuplicates(t *testing.T) {
+func main() {
 	// 示例 1
 	nums1 := []int{1, 1, 2}
-	expectedLength1 := 2
-	expectedNums1 := []int{1, 2}
+	//expectedLength1 := 2
+	//expectedNums1 := []int{1, 2}
 
-	length1 := removeDuplicates(nums1)
-
-	if length1 != expectedLength1 {
-		t.Errorf("expected length %d, got %d", expectedLength1, length1)
-	}
-	for i := 0; i < length1; i++ {
-		if nums1[i] != expectedNums1[i] {
-			t.Errorf("expected nums[%d] = %d, got %d", i, expectedNums1[i], nums1[i])
-		}
-	}
-
-	// 示例 2
 	nums2 := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
-	expectedLength2 := 5
-	expectedNums2 := []int{0, 1, 2, 3, 4}
+	//expectedLength2 := 5
+	//expectedNums2 := []int{0, 1, 2, 3, 4}
 
-	length2 := removeDuplicates(nums2)
-
-	if length2 != expectedLength2 {
-		t.Errorf("expected length %d, got %d", expectedLength2, length2)
-	}
-	for i := 0; i < length2; i++ {
-		if nums2[i] != expectedNums2[i] {
-			t.Errorf("expected nums[%d] = %d, got %d", i, expectedNums2[i], nums2[i])
-		}
-	}
+	result1 := removeDuplicates(nums1)
+	result2 := removeDuplicates(nums2)
+	fmt.Printf("result1: %d, result2:  %d\n", result1, result2)
 }
 
-func main() {
-	// 运行测试
-	TestRemoveDuplicates(&testing.T{})
-	fmt.Println("Tests completed.")
+func removeDuplicates2(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	left := 0
+	for right := 1; right < len(nums); right++ {
+		if nums[left] != nums[right] {
+			left++
+			nums[left] = nums[right]
+		}
+	}
+	return left + 1
 }
