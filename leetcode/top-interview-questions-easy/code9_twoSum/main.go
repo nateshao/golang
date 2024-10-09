@@ -16,14 +16,24 @@ public int[] twoSum(int[] nums, int target) {
 */
 
 func twoSum(nums []int, target int) []int {
-	hashmap := make(map[int]int)
+	// 创建一个哈希表用于存储数值及其对应的索引
+	hashMap := make(map[int]int)
+
+	// 遍历数组
 	for i, num := range nums {
+		// 计算当前数 num 需要的目标补数
 		complement := target - num
-		if index, found := hashmap[complement]; found {
+
+		// 如果补数存在于哈希表中，则找到了答案
+		if index, found := hashMap[complement]; found {
 			return []int{index, i}
 		}
-		hashmap[num] = i
+
+		// 否则，将当前数和它的索引加入哈希表
+		hashMap[num] = i
 	}
+
+	// 如果没有找到，则返回空数组（题目保证了必定有解）
 	return nil
 }
 
