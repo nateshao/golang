@@ -7,7 +7,7 @@ import (
 // split package with a single split function.
 
 // Split slices s into all substrings separated by sep and
-// returns a slice of the substrings between those separators.
+// returns a code1_slice of the substrings between those separators.
 //func Split(s, sep string) (result []string) {
 //	i := strings.Index(s, sep)
 //
