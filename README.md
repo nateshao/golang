@@ -39,7 +39,7 @@ shaotongjie@shaotongjiedebijibendiannao golang % tree .
 8. Chore：对构建过程或辅助工具和库的更改
 9. Update：更新依赖
 10. Build：构建过程或辅助工具和库的更改
-11. Revert：代码回退
+11. Revert：代码回退               
 12. CI：CI 配置文件和脚本的改变
 13. Temp：临时提交
 14. Add：新增内容
