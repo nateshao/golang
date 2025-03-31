@@ -27,6 +27,6 @@ func main() {
 		fmt.Println("func2 release lock " + time.Now().String())
 	}()
 
-	// 等待 所有 goroutine 执行完毕
+	// 等待 所有 bd 执行完毕
 	time.Sleep(time.Second * 4)
 }

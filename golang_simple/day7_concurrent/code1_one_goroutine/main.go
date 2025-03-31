@@ -9,11 +9,11 @@ import (
 //import "fmt"
 //
 //func hello() {
-//	fmt.Println("hello goroutine")
+//	fmt.Println("hello bd")
 //}
 //func main() {
 //	hello()
-//	fmt.Println("main goroutine done!")
+//	fmt.Println("main bd done!")
 //}
 
 func main() {
@@ -22,14 +22,14 @@ func main() {
 		i := 0
 		for {
 			i++
-			fmt.Printf("new goroutine: i = %d\n", i)
+			fmt.Printf("new bd: i = %d\n", i)
 			time.Sleep(time.Second)
 		}
 	}()
 	i := 0
 	for {
 		i++
-		fmt.Printf("main goroutine: i = %d\n", i)
+		fmt.Printf("main bd: i = %d\n", i)
 		time.Sleep(time.Second)
 		if i == 2 {
 			break

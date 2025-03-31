@@ -23,7 +23,7 @@ func main() {
 	//go func(name string) {
 	//	fmt.Println("Hello " + name )
 	//}("xuan")
-	//// 主 goroutine 阻塞 1 s
+	//// 主 bd 阻塞 1 s
 	//time.Sleep(time.Second)
 
 }

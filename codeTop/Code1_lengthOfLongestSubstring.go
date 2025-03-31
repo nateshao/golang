@@ -30,6 +30,9 @@ func lengthOfLongestSubstring(s string) int {
 
 func main() {
 	s := "abcabcbb"
+	slice := []int{1, 2, 3}
+	slice = append(slice, 4)
+	slice = append(slice, 5)
 	println(lengthOfLongestSubstring(s))
 }
 

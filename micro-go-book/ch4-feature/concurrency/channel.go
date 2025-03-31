@@ -69,7 +69,7 @@ func main() {
 	go send(ch1, 0)
 	go send(ch2, 10)
 
-	// 主 goroutine 休眠 1s，保证调度成功
+	// 主 bd 休眠 1s，保证调度成功
 	time.Sleep(time.Second)
 
 	for {

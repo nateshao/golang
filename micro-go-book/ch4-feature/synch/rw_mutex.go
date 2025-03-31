@@ -31,6 +31,6 @@ func main() {
 		}(i)
 	}
 
-	// 保证所有的 goroutine 执行结束
+	// 保证所有的 bd 执行结束
 	time.Sleep(time.Second * 10)
 }

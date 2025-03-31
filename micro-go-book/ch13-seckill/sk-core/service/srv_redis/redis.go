@@ -22,12 +22,12 @@ func RunProcess() {
 		go HandleUser()
 	}
 
-	log.Printf("all process goroutine started")
+	log.Printf("all process bd started")
 	return
 }
 
 func HandleReader() {
-	log.Printf("read goroutine running %v", conf.Redis.Proxy2layerQueueName)
+	log.Printf("read bd running %v", conf.Redis.Proxy2layerQueueName)
 	for {
 		conn := conf.Redis.RedisConn
 		for {
@@ -80,7 +80,7 @@ func HandleWrite() {
 	}
 }
 
-//将数据推入到Redis队列
+// 将数据推入到Redis队列
 func sendToRedis(res *config.SecResult) (err error) {
 	data, err := json.Marshal(res)
 	if err != nil {
