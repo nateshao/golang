@@ -27,6 +27,33 @@ import "sync"
 //	close(ch)
 //}
 
+//func main() {
+//	var wg sync.WaitGroup
+//	wg.Add(2)
+//	ch := make(chan struct{})
+//	// 打印奇数
+//	go func() {
+//		defer wg.Done()
+//		for i := 1; i <= 10; i += 2 {
+//			println("奇数：", i)
+//			ch <- struct{}{} // 通知另外一个线程
+//			<-ch             // 等待接收
+//		}
+//	}()
+//
+//	// 打印偶数
+//	go func() {
+//		defer wg.Done()
+//		for i := 2; i <= 10; i += 2 {
+//			<-ch // 等待接收
+//			println("偶数：", i)
+//			ch <- struct{}{} // 通知另外一个线程
+//		}
+//	}()
+//	wg.Wait()
+//	close(ch)
+//}
+
 func main() {
 	var wg sync.WaitGroup
 	wg.Add(2)
@@ -36,18 +63,17 @@ func main() {
 		defer wg.Done()
 		for i := 1; i <= 10; i += 2 {
 			println("奇数：", i)
-			ch <- struct{}{} // 通知另外一个线程
+			ch <- struct{}{} // 通知对方
 			<-ch             // 等待接收
 		}
 	}()
 
-	// 打印偶数
 	go func() {
 		defer wg.Done()
 		for i := 2; i <= 10; i += 2 {
-			<-ch // 等待接收
+			<-ch
 			println("偶数：", i)
-			ch <- struct{}{} // 通知另外一个线程
+			ch <- struct{}{}
 		}
 	}()
 	wg.Wait()
